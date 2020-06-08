@@ -26,6 +26,7 @@ const daysOfWeek = [monday, "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", true, 56];
 
 console.log(daysOfWeek[2]);*/
 
+
 // object
 const nikkiesInfo = {
     name:"ys",
@@ -51,4 +52,4 @@ nikkiesInfo.isHandsome = false;
 
 console.log(nikkiesInfo.isHandsome);
 
-console.log(nikkiesInfo);
+console.log(nikkiesInfo.favFood[1].fatty);
