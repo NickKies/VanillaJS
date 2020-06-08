@@ -2,25 +2,48 @@ console.log(document);
 
 const title = document.getElementById("title");
 const tit = document.querySelector("#title");
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
 
 console.log(title);
 
-title.innerHtML = "Hi From JS";
-title.style.color = "red";
-tit.style.backgroundColor = "black";
-console.dir(document);
+function init() {
+    title.innerHtML = "Hi From JS";
+    title.style.color = BASE_COLOR;
+    tit.style.backgroundColor = "black";
+    console.dir(document);
 
-document.title = "I own you now";
+    document.title = "I own you now";
+
+    //console.log("I have been resized");
+    //window.addEventListener("resize", handleResize());
+    window.addEventListener("resize", handleResize);
+    //title.addEventListener("click", handleClick);
+    title.addEventListener("mouseenter", handleClick);
+}
+
+init();
 
 function handleResize(event) {
     console.log(event);
-    //console.log("I have been resized");
 }
 
 function handleClick() {
-    title.style.color="white";
+    const currerntColor = title.style.color;
+    if ( currerntColor === BASE_COLOR) {
+        title.style.color = OTHER_COLOR;
+    } else {
+        title.style.color = BASE_COLOR;
+    }
 }
 
-//window.addEventListener("resize", handleResize());
-window.addEventListener("resize", handleResize);
-title.addEventListener("click", handleClick)
+function handleOffline() {
+    console.log("bye bye");
+}
+function handleOnline() {
+    console.log("welcome back")
+}
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOffline);
+
