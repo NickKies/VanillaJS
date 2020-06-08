@@ -11,3 +11,16 @@ tit.style.backgroundColor = "black";
 console.dir(document);
 
 document.title = "I own you now";
+
+function handleResize(event) {
+    console.log(event);
+    //console.log("I have been resized");
+}
+
+function handleClick() {
+    title.style.color="white";
+}
+
+//window.addEventListener("resize", handleResize());
+window.addEventListener("resize", handleResize);
+title.addEventListener("click", handleClick)
